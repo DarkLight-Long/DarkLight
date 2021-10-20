@@ -36,10 +36,9 @@ jobs:
           node-version: '10.x'
       - name: Panding intsall dependencies
         run: echo Node setup successfuly and begin to install dependencies
-      - name: Install Dependencies, build
+      - name: Install Dependencies
         run: |
           npm install
-          npm run build
       - name: Panding build demo
         run: echo install dependencies successfully and begin to build demo
       - name: Build
