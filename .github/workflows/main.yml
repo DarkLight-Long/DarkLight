@@ -45,6 +45,8 @@ jobs:
         run: |
           pwd
           ls
+          cat package-lock.json
+          cp package-lock.json package.json --if-present
           npm run build --if-present
       - name: end
         run: echo build page end, its successfully
