@@ -43,10 +43,10 @@ jobs:
         run: echo install dependencies successfully and begin to build demo
       - name: Build 
         run: |
+          npm init -f
           pwd
           ls
-          cat package-lock.json
-          cp package-lock.json package.json --if-present
+          cat package.json
           npm run build --if-present
       - name: end
         run: echo build page end, its successfully
