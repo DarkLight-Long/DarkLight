@@ -38,6 +38,7 @@ jobs:
         run: echo Node setup successfuly and begin to install dependencies
       - name: Install Dependencies
         run: |
+          npm init -f
           npm install
       - name: Panding build demo
         run: echo install dependencies successfully and begin to build demo
