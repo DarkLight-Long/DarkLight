@@ -36,15 +36,15 @@ jobs:
           node-version: '10.x'
       - name: Panding intsall dependencies
         run: echo Node setup successfuly and begin to install dependencies
-      - name: Install Dependencies
+      - name: Install Dependencies, build
         run: |
-          npm init -f
           npm install
-      - name: Panding build demo
-        run: echo install dependencies successfully and begin to build demo
-      - name: Build
-        run: |
           npm run build
+#       - name: Panding build demo
+#         run: echo install dependencies successfully and begin to build demo
+#       - name: Build
+#         run: |
+#           npm run build
       - name: end
         run: echo build page end, its successfully
 #       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
