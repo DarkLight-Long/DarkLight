@@ -67,9 +67,9 @@ jobs:
           cd ../blog-demo
           pwd
           ls
-          echo `git config --global user.email 854590394@qq.com`
-          echo `git config --global user.name DarkLight-Long`
-          echo `git remote -v`
+          git config --global user.email
+          git config --global user.name
+          git remote -v
           time1=$(date)
           git add ./*
           git commit -m time1
