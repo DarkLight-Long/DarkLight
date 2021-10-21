@@ -34,29 +34,45 @@ jobs:
         uses: actions/setup-node@v1
         with:
           node-version: '10.x'
-      - name: Panding intsall dependencies
-        run: echo Node setup successfuly and begin to install dependencies
-      - name: Install Dependencies, build
+      - name: Clone DarkLight
         run: |
+          cd ..
+          rm -rf ./DarkLight
+          git clone https://github.com/DarkLight-Long/DarkLight.git
+          pwd
+          ls
+      - name: Clone blog-demo
+        run: |
+          cd ..
+          pwd
+          ls
+          git clone https://github.com/DarkLight-Long/blog-demo.git
+          pwd
+          ls
+      - name: Install Dependencies
+        run: |
+          pwd
+          ls
           npm install
-          npm run build
-      - name: Panding build demo
-        run: echo install dependencies successfully and begin to build demo
-      - name: Build
+          npm run build --if-present
+          ls
+      - name: MV dist to blog-demo, and push blog-demo
         run: |
-          npm run build
-      - name: end
-        run: echo build page end, its successfully
-#       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-#       - uses: actions/checkout@v2
+          /bin/cp -rf ./dist/* ../blog-demo
+          cd ../blog-demo
+          pwd
+          ls
+      - name: push
+        run: |
+          cd ../blog-demo
+          pwd
+          ls
+          time1=$(date)
+          git config --global user.email "854590394@qq.com"
+          git config --global user.name "DarkLight-Long"
+          git add ./*
+          git commit -m time1
+          git push https://github.com/DarkLight-Long/blog-demo.git master:master
+          
 
-#       # Runs a single command using the runners shell
-#       - name: Run a one-line script
-#         run: echo Hello, world!
-
-#       # Runs a set of commands using the runners shell
-#       - name: Run a multi-line script
-#         run: |
-#           echo Add other actions to build,
-#           echo test, and deploy your project.
 
