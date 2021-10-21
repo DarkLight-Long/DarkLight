@@ -62,10 +62,11 @@ jobs:
           cd ../blog-demo
           pwd
           ls
-      - name: Push changes
-        uses: ad-m/github-push-action@master
+      - name: GitHub Push
+        uses: ad-m/github-push-action@v0.6.0
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
+          repository: DarkLight-Long/blog-demo
           directory: /home/runner/work/DarkLight/blog-demo/*
       #time1=$(date)
       #git config --global user.email "854590394@qq.com"
