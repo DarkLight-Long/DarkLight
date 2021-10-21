@@ -34,19 +34,23 @@ jobs:
         uses: actions/setup-node@v1
         with:
           node-version: '10.x'
-      - name: Panding intsall dependencies
-        run: echo Node setup successfuly and begin to install dependencies
+      - name: Clone demo
+        run: |
+          git clone https://github.com/DarkLight-Long/DarkLight.git
+      - name: Check folder
+        run: |
+          ls
       - name: Install Dependencies
         run: |
           npm install
-      - name: Panding build demo
-        run: echo install dependencies successfully and begin to build demo
+#       - name: Panding build demo
+#         run: echo install dependencies successfully and begin to build demo
       - name: Build 
         run: |
           npm init -f
           npm run build --if-present
           pwd
           ls
-      - name: end
-        run: echo build page end, its successfully
+#       - name: end
+#         run: echo build page end, its successfully
 
