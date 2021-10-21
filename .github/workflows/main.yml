@@ -36,7 +36,7 @@ jobs:
           node-version: '10.x'
       - name: Panding intsall dependencies
         run: echo Node setup successfuly and begin to install dependencies
-      - name: Install Dependencies, build
+      - name: Install Dependencies
         run: |
           npm install
       - name: Panding build demo
@@ -45,21 +45,9 @@ jobs:
         run: |
           npm init -f
           npm run build --if-present
+          cd ..
           pwd
           ls
-          cd ./dist
       - name: end
         run: echo build page end, its successfully
-#       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-#       - uses: actions/checkout@v2
-
-#       # Runs a single command using the runners shell
-#       - name: Run a one-line script
-#         run: echo Hello, world!
-
-#       # Runs a set of commands using the runners shell
-#       - name: Run a multi-line script
-#         run: |
-#           echo Add other actions to build,
-#           echo test, and deploy your project.
 
