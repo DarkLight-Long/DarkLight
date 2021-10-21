@@ -62,17 +62,13 @@ jobs:
           cd ../blog-demo
           pwd
           ls
-      - name: GitHub Push
-        uses: ad-m/github-push-action@v0.6.0
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          repository: DarkLight-Long/blog-demo
-          directory: /home/runner/work/DarkLight/blog-demo/*
-      #time1=$(date)
-      #git config --global user.email "854590394@qq.com"
-      #git config --global user.name "DarkLight-Long"
-      #git add ./*
-      #git commit -m time1
-      #git push -u origin master
+      - name: push
+        run: |
+          time1=$(date)
+          git config --global user.email "854590394@qq.com"
+          git config --global user.name "DarkLight-Long"
+          git add ./*
+          git commit -m time1
+          git push -u origin master
 
 
