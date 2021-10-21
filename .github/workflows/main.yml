@@ -65,9 +65,8 @@ jobs:
           time1=$(date)
           git config --global user.email "854590394@qq.com"
           git config --global user.name "DarkLight-Long"
-          git remote add origin git@github.com:DarkLight-Long/blog-demo.git
           git add ./*
           git commit -m time1
-          git push
+          git push -u origin master
 
 
