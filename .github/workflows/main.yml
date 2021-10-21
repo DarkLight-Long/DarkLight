@@ -67,7 +67,6 @@ jobs:
           cd ../blog-demo
           pwd
           ls
-          time1=$(date)
           git config --global user.email
           git config --global user.name
           git remote -v
