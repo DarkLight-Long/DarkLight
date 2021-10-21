@@ -39,6 +39,7 @@ jobs:
           git clone https://github.com/DarkLight-Long/DarkLight.git
       - name: Check folder
         run: |
+          cd ./DarkLight
           ls
       - name: Install Dependencies
         run: |
