@@ -41,13 +41,13 @@ jobs:
           git clone https://github.com/DarkLight-Long/DarkLight.git
           pwd
           ls
-          cd ..
       - name: Clone blog-demo
         run: |
+          pwd
+          ls
           git clone https://github.com/DarkLight-Long/blog-demo.git
           pwd
           ls
-          cd ..
       - name: Install Dependencies
         run: |
           cd ./DarkLight
