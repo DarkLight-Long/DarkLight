@@ -33,7 +33,7 @@ jobs:
         uses: actions/setup-node@v1
         with:
           node-version: '10.x'
-          auth: true
+          always-auth: true
       - name: Clone DarkLight
         run: |
           cd ..
@@ -75,7 +75,7 @@ jobs:
           time1=$(date)
           git add ./*
           git commit -m time1
-          git push origin master:master
+          git push git@github/DarkLight-Long/blog-demo master
           
 
 
