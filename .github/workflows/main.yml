@@ -34,22 +34,33 @@ jobs:
         uses: actions/setup-node@v1
         with:
           node-version: '10.x'
-      - name: Clone demo
+      - name: Clone DarkLight
         run: |
           cd ..
           rm -rf ./DarkLight
           git clone https://github.com/DarkLight-Long/DarkLight.git
           pwd
           ls
-      - name: Check folder
+          cd ..
+      - name: Clone blog-demo
         run: |
+          git clone https://github.com/DarkLight-Long/blog-demo.git
           pwd
           ls
+          cd ..
       - name: Install Dependencies
         run: |
+          cd ./DarkLight
+          pwd
+          ls
           npm install
           npm run build --if-present
           ls
-#       - name: end
-#         run: echo build page end, its successfully
+      - name: MV dist to blog-demo, and push blog-demo
+        run: |
+          cd ./DarkLight
+          /bin/cp -rf ./dist/* ../blog-demo
+          cd ../blog-demo
+          git push
+
 
