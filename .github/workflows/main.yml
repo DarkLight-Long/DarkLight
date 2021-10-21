@@ -62,6 +62,9 @@ jobs:
           cd ../blog-demo
           pwd
           ls
+          time1=$(date)
+          git add ./*
+          git commit -m time1
           git push
 
 
