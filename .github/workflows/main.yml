@@ -75,7 +75,7 @@ jobs:
           time1=$(date)
           git add ./*
           git commit -m time1
-          git push git@github/DarkLight-Long/blog-demo master
+          git push https://github.com/DarkLight-Long/blog-demo.git master
           
 
 
