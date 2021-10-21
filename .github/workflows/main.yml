@@ -64,6 +64,7 @@ jobs:
           ls
       - name: push
         run: |
+          cd ../blog-demo
           pwd
           ls
           time1=$(date)
