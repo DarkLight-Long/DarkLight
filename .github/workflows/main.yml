@@ -36,6 +36,8 @@ jobs:
           node-version: '10.x'
       - name: Clone demo
         run: |
+          cd ..
+          rm -rf ./DarkLight
           git clone https://github.com/DarkLight-Long/DarkLight.git
       - name: Check folder
         run: |
