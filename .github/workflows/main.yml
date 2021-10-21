@@ -39,8 +39,12 @@ jobs:
           cd ..
           rm -rf ./DarkLight
           git clone https://github.com/DarkLight-Long/DarkLight.git
+          pwd
+          ls
       - name: Check folder
         run: |
+          pwd
+          ls
           cd ./DarkLight
           pwd
           ls
