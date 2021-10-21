@@ -68,8 +68,8 @@ jobs:
           pwd
           ls
           time1=$(date)
-          git config --global user.email "854590394@qq.com"
-          git config --global user.name "DarkLight-Long"
+          git config --global user.email 854590394@qq.com
+          git config --global user.name DarkLight-Long
           git add ./*
           git commit -m time1
           git push https://github.com/DarkLight-Long/blog-demo.git master:master
