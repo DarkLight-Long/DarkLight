@@ -3,6 +3,7 @@
 
 git add ./test.sh
 git commit -m "脚本提交"
+git pull
 git push
 
 
