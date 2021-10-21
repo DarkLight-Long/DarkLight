@@ -45,9 +45,6 @@ jobs:
         run: |
           pwd
           ls
-          cd ./DarkLight
-          pwd
-          ls
       - name: Install Dependencies
         run: |
           npm install
