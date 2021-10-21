@@ -43,6 +43,7 @@ jobs:
           ls
       - name: Clone blog-demo
         run: |
+          cd ..
           pwd
           ls
           git clone https://github.com/DarkLight-Long/blog-demo.git
@@ -50,7 +51,6 @@ jobs:
           ls
       - name: Install Dependencies
         run: |
-          cd ./DarkLight
           pwd
           ls
           npm install
@@ -58,7 +58,6 @@ jobs:
           ls
       - name: MV dist to blog-demo, and push blog-demo
         run: |
-          cd ./DarkLight
           /bin/cp -rf ./dist/* ../blog-demo
           cd ../blog-demo
           git push
