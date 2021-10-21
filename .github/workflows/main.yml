@@ -45,7 +45,6 @@ jobs:
         run: |
           npm init -f
           npm run build --if-present
-          cd ..
           pwd
           ls
       - name: end
