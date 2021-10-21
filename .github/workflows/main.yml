@@ -39,14 +39,15 @@ jobs:
           git clone https://github.com/DarkLight-Long/DarkLight.git
       - name: Check folder
         run: |
-          cd ./DarkLight
+          whi
+          cd ./DarkLight/DarkLight
+          pwd
           ls
       - name: Install Dependencies
         run: |
           npm init -f
           npm install
           npm run build --if-present
-          pwd
           ls
 #       - name: end
 #         run: echo build page end, its successfully
