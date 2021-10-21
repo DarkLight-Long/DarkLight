@@ -60,6 +60,8 @@ jobs:
         run: |
           /bin/cp -rf ./dist/* ../blog-demo
           cd ../blog-demo
+          pwd
+          ls
           git push
 
 
