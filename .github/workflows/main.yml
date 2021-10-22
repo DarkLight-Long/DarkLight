@@ -62,29 +62,21 @@ jobs:
           cd ../blog-demo
           pwd
           ls
-          echo '${ GITHUB_TOKEN }'
-      - name: Build and Deploy
-        uses: ApolloZhu/hexo-deploy-action@master
-        env:
-          PERSONAL_TOKEN: ${ GITHUB_TOKEN }
-          PUBLISH_REPOSITORY: git@github.com:DarkLight-Long/blog-demo.git # The repository the action should deploy to.
-          BRANCH: master # The branch the action should deploy to.
-          PUBLISH_DIR: ../blog-demo # The folder the action should deploy.
-#       - name: push
-#         run: |
-#           cd ../blog-demo
-#           pwd
-#           ls
-#           git config --global user.email 854590394@qq.com
-#           git config --global user.name DarkLight-Long
-#           git remote -v
-#           git config --get user.name
-#           git config --get user.email
-#           time1=$(date)
-#           git add ./*
-#           git commit -m '${time1}'
-#           git push git@github.com:DarkLight-Long/blog-demo.git master
-      #git push https://github.com/DarkLight-Long/blog-demo.git master
-#       git@github.com:username/repo.git
+          echo $GITHUB_TOKEN
+      - name: push
+        run: |
+          cd ../blog-demo
+          pwd
+          ls
+          git config --global user.email 854590394@qq.com
+          git config --global user.name DarkLight-Long
+          git remote -v
+          git config --get user.name
+          git config --get user.email
+          time1=$(date)
+          git add ./*
+          git commit -m '${time1}'
+          git push
+          
 
 
