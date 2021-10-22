@@ -42,14 +42,13 @@ jobs:
         uses: actions/checkout@v2.3.5
         with: 
           repository: DarkLight-Long/blog-demo
-          path: ../blog-demo
-      - name: test
+      - name: mv blog-demo to the correct folder
         run: |
-          ls
-          pwd
+          /bin/cp -rf ./blog-demo ../blog-demo
       - name: CheckOut DarkLight
         run: |
           cd ..
+          rm -rf ./DarkLight
           pwd
           ls
           git clone https://github.com/DarkLight-Long/DarkLight.git
@@ -73,11 +72,6 @@ jobs:
           cd ../blog-demo
           pwd
           ls
-          git config --global user.email "854590394@qq.com"
-          git config --global user.name "DarkLight-Long"
-          git remote -v
-          git config --get user.name
-          git config --get user.email
           time1=$(date)
           git add ./*
           git commit -m "$time1"
