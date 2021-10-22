@@ -37,19 +37,15 @@ jobs:
       - name: prepare for checkouting blog-demo
         run: |
           cd ..
-          rm -rf ./DarkLight
           mkdir blog-demo
-          pwd
-          ls
       - name: Checkout blog-demo
         uses: actions/checkout@v2.3.5
         with: 
           repository: DarkLight-Long/blog-demo
-          path: /home/runner/work/DarkLight/blog-demo
+          path: ../blog-demo
       - name: test
         run: |
           ls
-          cd ..
           pwd
       - name: CheckOut DarkLight
         run: |
