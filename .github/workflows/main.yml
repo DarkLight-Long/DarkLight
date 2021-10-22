@@ -67,9 +67,10 @@ jobs:
           time1=$(date)
           git config --global user.name "DarkLight-Long"
           git config --global user.email "854590394@qq.com"
+          git remote set-url origin https://${GITHUB_TOKEN}@github.com/DarkLight-Long/blog-demo.git
           git add ./*
           git commit -m "${time1} action auto"
-          git push ${GITHUB_TOKEN}@github.com:DarkLight-Long/DarkLight.git
+          git push
       - name: end
         run: |
           echo successfully
