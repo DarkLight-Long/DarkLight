@@ -41,11 +41,15 @@ jobs:
           mkdir blog-demo
           pwd
           ls
+      - name: test
+        run: |
+          pwd
+          ls
       - name: Checkout blog-demo
         uses: actions/checkout@v2.3.5
         with: 
           repository: DarkLight-Long/blog-demo
-          path: ./blog-demo
+          path: /home/runner/work/DarkLight/blog-demo
       - name: CheckOut DarkLight
         run: |
           cd ..
