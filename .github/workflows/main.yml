@@ -43,9 +43,9 @@ jobs:
           ls
       - name: test
         run: |
+          ls
           cd ..
           pwd
-          ls
       - name: Checkout blog-demo
         uses: actions/checkout@v2.3.5
         with: 
