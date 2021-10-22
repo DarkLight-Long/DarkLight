@@ -38,7 +38,7 @@ jobs:
         run: |
           cd ..
           rm -rf ./DarkLight
-          mkdir blod-demo
+          mkdir blog-demo
           pwd
           ls
       - name: Checkout blog-demo
