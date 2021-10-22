@@ -68,7 +68,7 @@ jobs:
           REPO: https://github.com/DarkLight-Long/blog-demo.git
           BRANCH: master
           FOLDER: ../blog-demo  
-          SSH_PRIVATE_KEY: ${{ GITHUB_TOKEN  }}
+          SSH_PRIVATE_KEY: $GITHUB_TOKEN
 #       - name: push
 #         run: |
 #           cd ../blog-demo
