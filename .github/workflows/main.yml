@@ -62,28 +62,21 @@ jobs:
           cd ../blog-demo
           pwd
           ls
-      - name: publish
-        uses: s0/git-publish-subdir-action@master
-        env:
-          REPO: https://github.com/DarkLight-Long/blog-demo.git
-          BRANCH: master
-          FOLDER: ../blog-demo  
-          SSH_PRIVATE_KEY: $GITHUB_TOKEN
-#       - name: push
-#         run: |
-#           cd ../blog-demo
-#           pwd
-#           ls
-#           git config --global user.email 854590394@qq.com
-#           git config --global user.name DarkLight-Long
-#           git remote -v
-#           git config --get user.name
-#           git config --get user.email
-#           time1=$(date)
-#           git add ./*
-#           git commit -m "$time1"
-#           git log
-#           git push
+      - name: push
+        run: |
+          cd ../blog-demo
+          pwd
+          ls
+          git config --global user.email "854590394@qq.com"
+          git config --global user.name "DarkLight-Long"
+          git remote -v
+          git config --get user.name
+          git config --get user.email
+          time1=$(date)
+          git add ./*
+          git commit -m "$time1"
+          git log
+          git push https://github.com/DarkLight-Long/blog-demo.git master
           
 
 
