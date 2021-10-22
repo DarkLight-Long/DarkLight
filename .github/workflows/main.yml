@@ -43,6 +43,7 @@ jobs:
           ls
       - name: test
         run: |
+          cd ..
           pwd
           ls
       - name: Checkout blog-demo
