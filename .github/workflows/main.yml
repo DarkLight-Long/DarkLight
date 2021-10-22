@@ -34,19 +34,22 @@ jobs:
         with:
           node-version: '10.x'
           always-auth: true
-      - name: Clone DarkLight
+      - name: prepare for checkouting blog-demo
         run: |
           cd ..
           rm -rf ./DarkLight
-          git clone https://github.com/DarkLight-Long/DarkLight.git
           pwd
           ls
-      - name: Clone blog-demo
+      - name: Checkout blog-demo
+        uses: actions/checkout@v2.3.5
+        with: 
+          repository: DarkLight-Long/blog-demo
+      - name: CheckOut DarkLight
         run: |
           cd ..
           pwd
           ls
-          git clone https://github.com/DarkLight-Long/blog-demo.git
+          git clone https://github.com/DarkLight-Long/DarkLight.git
           pwd
           ls
       - name: Install Dependencies
@@ -75,8 +78,9 @@ jobs:
           time1=$(date)
           git add ./*
           git commit -m "$time1"
-          git log
-          git push https://github.com/DarkLight-Long/blog-demo.git master
-          
+          git push 
+      - name: end
+        run: |
+          echo successfully
 
 
