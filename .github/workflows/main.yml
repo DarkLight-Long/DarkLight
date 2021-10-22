@@ -48,7 +48,7 @@ jobs:
         run: |
           ls
           pwd
-          /bin/cp -rf ./blog-demo ../blog-demo
+          /bin/cp -rf ./* ../blog-demo
       - name: CheckOut DarkLight
         run: |
           cd ..
