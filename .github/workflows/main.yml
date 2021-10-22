@@ -38,12 +38,16 @@ jobs:
         run: |
           cd ..
           mkdir blog-demo
+          ls
+          pwd
       - name: Checkout blog-demo
         uses: actions/checkout@v2.3.5
         with: 
           repository: DarkLight-Long/blog-demo
       - name: mv blog-demo to the correct folder
         run: |
+          ls
+          pwd
           /bin/cp -rf ./blog-demo ../blog-demo
       - name: CheckOut DarkLight
         run: |
