@@ -34,32 +34,21 @@ jobs:
         with:
           node-version: '10.x'
           always-auth: true
-      - name: prepare for checkouting blog-demo
-        run: |
-          cd ..
-          mkdir blog-demo
-          ls
-          pwd
       - name: Checkout blog-demo
         uses: actions/checkout@v2.3.5
         with: 
           repository: DarkLight-Long/blog-demo
-      - name: mv blog-demo to the correct folder
-        run: |
-          ls
-          pwd
-          /bin/cp -rf ./* ../blog-demo
+          path: ./blog-demo
       - name: CheckOut DarkLight
         run: |
-          cd ..
-          rm -rf ./DarkLight
-          pwd
-          ls
+          mkdir DarkLight
+          cd ./DarkLight
           git clone https://github.com/DarkLight-Long/DarkLight.git
           pwd
           ls
       - name: Install Dependencies
         run: |
+          cd ./DarkLight
           pwd
           ls
           npm install
@@ -67,18 +56,19 @@ jobs:
           ls
       - name: MV dist to blog-demo, and push blog-demo
         run: |
+          cd ./DarkLight
           /bin/cp -rf ./dist/* ../blog-demo
           cd ../blog-demo
           pwd
           ls
       - name: push
         run: |
-          cd ../blog-demo
+          cd ./blog-demo
           pwd
           ls
           time1=$(date)
           git add ./*
-          git commit -m "$time1"
+          git commit -m "${time1} action auto"
           git push 
       - name: end
         run: |
