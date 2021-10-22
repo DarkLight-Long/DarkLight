@@ -41,8 +41,6 @@ jobs:
           path: ./blog-demo
       - name: CheckOut DarkLight
         run: |
-          mkdir DarkLight
-          cd ./DarkLight
           git clone https://github.com/DarkLight-Long/DarkLight.git
           pwd
           ls
