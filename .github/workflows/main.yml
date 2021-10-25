@@ -71,7 +71,7 @@ jobs:
           git config --global user.email "854590394@qq.com"
           git add ./*
           echo "${GITHUBTOKEN}"
-          gh auth login --with-token "repo"
+          gh auth login --with-token
           git commit -m "${time1} action auto"
           https://${GITHUBTOKEN}@github.com/DarkLight-Long/blog-demo.git
       - name: end
