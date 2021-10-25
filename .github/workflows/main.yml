@@ -61,6 +61,8 @@ jobs:
           pwd
           ls
       - name: push
+        env:
+          GITHUBTOKEN: ${GITHUB_TOKEN}
         run: |
           cd ./blog-demo
           pwd
@@ -69,6 +71,8 @@ jobs:
           git config --global user.name "DarkLight-Long"
           git config --global user.email "854590394@qq.com"
           git add ./*
+          echo "${GITHUBTOKEN}"
+          gh auth login
           git commit -m "${time1} action auto"
           git push
       - name: end
