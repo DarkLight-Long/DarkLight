@@ -61,7 +61,7 @@ jobs:
           ls
       - name: push
         env:
-          GITHUBTOKEN: ${{secrets.GITHUB_TOKEN}}
+          GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
         run: |
           cd ./blog-demo
           pwd
