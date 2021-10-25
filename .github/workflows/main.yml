@@ -67,7 +67,7 @@ jobs:
         run: |
           cd ./blog-demo
           pwd
-          ls
+          ls -a
           time1=$(date)
           git config --global user.name "DarkLight-Long"
           git config --global user.email "854590394@qq.com"
