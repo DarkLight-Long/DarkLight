@@ -41,10 +41,12 @@ jobs:
           ls
       - name: Checkout blog-demo
         uses: actions/checkout@v2.3.5
+        env:
+          GITHUBTOKEN: ${{secrets.GITHUB_TOKEN}}
         with: 
           repository: DarkLight-Long/blog-demo
           path: ./blog-demo
-          token: ${{secrets.GITHUB_TOKEN}}
+          token: ${GITHUBTOKEN}
           persist-credentials: false
       - name: Install Dependencies
         run: |
@@ -63,7 +65,7 @@ jobs:
           ls
       - name: push
         env:
-          GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
+          GITHUBTOKEN: ${{secrets.GITHUB_TOKEN}}
         run: |
           cd ./blog-demo
           pwd
@@ -73,7 +75,7 @@ jobs:
           git config --global user.email "854590394@qq.com"
           git add ./*
           git commit -m "${time1} action auto"
-          git push https://DarkLight-Long:${{secrets.GITHUB_TOKEN}}@github.com/DarkLight-Long/blog-demo.git
+          git push https://DarkLight-Long:${GITHUBTOKEN}@github.com/DarkLight-Long/blog-demo.git
       - name: end
         run: |
           echo successfully
