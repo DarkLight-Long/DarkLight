@@ -73,7 +73,7 @@ jobs:
           git config --global user.email "854590394@qq.com"
           git add ./*
           git commit -m "${time1} action auto"
-          git fetch master
+          git fetch
           git merge
           echo ${GITHUBTOKEN}
 #       git push https://DarkLight-Long:${GITHUBTOKEN}@github.com/DarkLight-Long/blog-demo.git
