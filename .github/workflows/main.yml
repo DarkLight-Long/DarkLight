@@ -66,6 +66,7 @@ jobs:
         with: 
           github_token: ${{secrets.GITHUB_TOKEN}}
           repository: DarkLight-Long/blog-demo
+          directory: ./blog-demo
 #       - name: push
 #         env:
 #           GITHUBTOKEN: ${{secrets.GITHUB_TOKEN}}
