@@ -74,12 +74,12 @@ jobs:
           git add ./*
           git commit -m "${time1} action auto"
           git branch
-          git push https://DarkLight-Long:${GITHUBTOKEN}@github.com/DarkLight-Long/blog-demo.git
-#       - name: Push
-#         uses: ad-m/github-push-action@master
-#         with:
-#           github_token: ${{ secrets.GITHUB_TOKEN }}
-#           directory: ./blog-demo
+#        git push https://DarkLight-Long:${GITHUBTOKEN}@github.com/DarkLight-Long/blog-demo.git
+      - name: Push
+        uses: ad-m/github-push-action@master
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          directory: ./blog-demo
       - name: end
         run: |
           echo successfully
