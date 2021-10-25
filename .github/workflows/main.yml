@@ -46,7 +46,7 @@ jobs:
         with: 
           repository: DarkLight-Long/blog-demo
           path: ./blog-demo
-          token: ${GITHUBTOKEN}
+          token: $GITHUBTOKEN
           persist-credentials: false
       - name: Install Dependencies
         run: |
