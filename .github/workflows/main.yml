@@ -40,7 +40,7 @@ jobs:
           git clone https://github.com/DarkLight-Long/DarkLight.git
           echo ${GITHUBTOKEN}
           echo ${{ secrets.GITHUB_TOKEN }}
-          echo ${{ secrets.BLOG_DEMO_TOKEN }}
+          echo ${{ secrets.TOKEN }}
           pwd
           ls
       - name: Checkout blog-demo
@@ -48,7 +48,7 @@ jobs:
         with: 
           repository: DarkLight-Long/blog-demo
           path: ./blog-demo
-          token: ${{secrets.BLOG_DEMO_TOKEN}}
+          token: ${{ secrets.GITHUB_TOKEN }}
           persist-credentials: false
           fetch-depth: 0
       - name: Install Dependencies
