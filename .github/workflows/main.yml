@@ -26,8 +26,6 @@ jobs:
     runs-on: ubuntu-latest
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
-      - env:
-          GITHUBTOKEN: ${{secrets.BLOG_DEMO_TOKEN}}
       - name: start
         run: 
           echo build page start, ready to setup Node
@@ -35,7 +33,9 @@ jobs:
         uses: actions/setup-node@v1
         with:
           node-version: '10.x'
-      - name: CheckOut DarkLight          
+      - name: CheckOut DarkLight
+        env:
+          GITHUBTOKEN: ${{secrets.BLOG_DEMO_TOKEN}}
         run: |
           git clone https://github.com/DarkLight-Long/DarkLight.git
           echo ${{GITHUBTOKEN}}
@@ -48,7 +48,7 @@ jobs:
         with: 
           repository: DarkLight-Long/blog-demo
           path: ./blog-demo
-          token: ${{GITHUBTOKEN}}
+          token: ${{secrets.BLOG_DEMO_TOKEN}}
           persist-credentials: false
           fetch-depth: 0
       - name: Install Dependencies
@@ -81,7 +81,7 @@ jobs:
       - name: Push
         uses: ad-m/github-push-action@master
         with:
-          github_token: ${{GITHUBTOKEN}}
+          github_token: ${{secrets.BLOG_DEMO_TOKEN}}
           directory: ./blog-demo
           branch: master
           force: true
