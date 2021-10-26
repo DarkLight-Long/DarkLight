@@ -81,7 +81,7 @@ jobs:
       - name: Push
         uses: ad-m/github-push-action@master
         with:
-          github_token: ${{secrets.BLOG_DEMO_TOKEN}}
+          github_token: ${{secrets.GITHUB_TOKEN}}
           directory: ./blog-demo
           branch: master
           force: true
