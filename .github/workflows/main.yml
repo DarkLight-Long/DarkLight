@@ -59,6 +59,7 @@ jobs:
           cd ./DarkLight
           /bin/cp -rf ./dist/* ../blog-demo
           cd ../blog-demo
+          git pull origin master
           pwd
           ls
       - name: push to blog-demo
@@ -73,7 +74,6 @@ jobs:
           git config --global user.email "854590394@qq.com"
           git add ./*
           git commit -m "${time1} action auto"
-          git pull origin master
 #        git push https://DarkLight-Long:${GITHUBTOKEN}@github.com/DarkLight-Long/blog-demo.git
       - name: Push
         uses: ad-m/github-push-action@master
