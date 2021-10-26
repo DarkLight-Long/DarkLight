@@ -81,6 +81,7 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           directory: ./blog-demo
           branch: master
+          force: true
       - name: end
         run: |
           echo successfully
