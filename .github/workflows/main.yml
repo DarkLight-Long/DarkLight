@@ -40,7 +40,6 @@ jobs:
           git clone https://github.com/DarkLight-Long/DarkLight.git
           echo ${GITHUBTOKEN}
           echo ${{ secrets.GITHUB_TOKEN }}
-          echo ${{ secrets.TOKEN }}
           pwd
           ls
       - name: Checkout blog-demo
@@ -81,7 +80,7 @@ jobs:
       - name: Push
         uses: ad-m/github-push-action@master
         with:
-          github_token: ${{secrets.GITHUB_TOKEN}}
+          github_token: ${{secrets.BLOG_DEMO_TOKEN}}
           directory: ./blog-demo
           branch: master
           force: true
