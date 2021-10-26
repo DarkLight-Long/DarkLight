@@ -36,6 +36,7 @@ jobs:
       - name: CheckOut DarkLight
         run: |
           git clone https://github.com/DarkLight-Long/DarkLight.git
+          echo "${{secrets.BLOG_DEMO_TOKEN}}"
           pwd
           ls
       - name: Checkout blog-demo
@@ -43,7 +44,7 @@ jobs:
         with: 
           repository: DarkLight-Long/blog-demo
           path: ./blog-demo
-          token: ${{BLOG_DEMO_TOKEN}}
+          token: ${{secrets.BLOG_DEMO_TOKEN}}
           persist-credentials: false
           fetch-depth: 0
       - name: Install Dependencies
@@ -63,7 +64,7 @@ jobs:
           ls
       - name: push to blog-demo
         env:
-          GITHUBTOKEN: ${{BLOG_DEMO_TOKEN}}
+          GITHUBTOKEN: ${{secrets.BLOG_DEMO_TOKEN}}
         run: |
           cd ./blog-demo
           pwd
@@ -78,7 +79,7 @@ jobs:
       - name: Push
         uses: ad-m/github-push-action@master
         with:
-          github_token: ${{ BLOG_DEMO_TOKEN }}
+          github_token: ${{secrets.BLOG_DEMO_TOKEN}}
           directory: ./blog-demo
           branch: master
           force: true
