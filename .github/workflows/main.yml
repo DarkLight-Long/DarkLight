@@ -36,8 +36,9 @@ jobs:
       - name: CheckOut DarkLight
         run: |
           git clone https://github.com/DarkLight-Long/DarkLight.git
-          echo "${{secrets.BLOG_DEMO_TOKEN}}"
-          echo "${{secrets.GITHUB_TOKEN}}"
+          echo ${{secrets.BLOG_DEMO_TOKEN}}
+          echo ${{secrets.GITHUB_TOKEN}}
+          echo ${{secrets}}
           pwd
           ls
       - name: Checkout blog-demo
