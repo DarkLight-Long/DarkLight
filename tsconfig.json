@@ -1,4 +1,6 @@
-// this is the vue.config.js fro typeScript
+// this is the vue.config.js for typeScript
+// it's difficult to use
+// vue.config.js is simple
 {
   "compilerOptions": {
     "target": "esnext",
@@ -13,7 +15,6 @@
     "allowSyntheticDefaultImports": true,
     "sourceMap": true,
     "baseUrl": "./",
-    "publicPath": "./",
     "allowJs": true,
     "checkJs": true,
     "types": [
@@ -36,7 +37,8 @@
     "src/**/*.tsx",
     "src/**/*.vue",
     "tests/**/*.ts",
-    "tests/**/*.tsx"
+    "tests/**/*.tsx",
+    
   ],
   "exclude": [
     "node_modules"
