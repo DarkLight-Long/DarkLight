@@ -11,7 +11,9 @@
     "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,
     "sourceMap": true,
-    "baseUrl": ".",
+    "baseUrl": "./",
+    "allowJs": true,
+    "checkJs": true,
     "types": [
       "webpack-env"
     ],
