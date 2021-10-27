@@ -34,16 +34,21 @@ jobs:
         with:
           node-version: '10.x'
       - name: CheckOut DarkLight
+        env:
+          GITHUBTOKEN: ${{secrets.BLOG_DEMO_TOKEN}}
         run: |
           git clone https://github.com/DarkLight-Long/DarkLight.git
+          echo ${GITHUBTOKEN}
+          echo ${{ secrets.GITHUB_TOKEN }}
           pwd
           ls
       - name: Checkout blog-demo
         uses: actions/checkout@v2.3.5
         with: 
           repository: DarkLight-Long/blog-demo
+          ref: dev
           path: ./blog-demo
-          token: ${{secrets.GITHUB_TOKEN}}
+          token: ${{ secrets.GITHUB_TOKEN }}
           persist-credentials: false
           fetch-depth: 0
       - name: Install Dependencies
@@ -62,8 +67,6 @@ jobs:
           pwd
           ls
       - name: push to blog-demo
-        env:
-          GITHUBTOKEN: ${{secrets.GITHUB_TOKEN}}
         run: |
           cd ./blog-demo
           pwd
@@ -71,16 +74,18 @@ jobs:
           time1=$(date)
           git config --global user.name "DarkLight-Long"
           git config --global user.email "854590394@qq.com"
+          git pull origin dev -f
           git add ./*
           git commit -m "${time1} action auto"
-          git pull origin master
 #        git push https://DarkLight-Long:${GITHUBTOKEN}@github.com/DarkLight-Long/blog-demo.git
       - name: Push
         uses: ad-m/github-push-action@master
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
+          repository: DarkLight-Long/blog-demo
+          github_token: ${{secrets.BLOG_DEMO_TOKEN}}
           directory: ./blog-demo
-          branch: master
+          branch: dev
+          force: true
       - name: end
         run: |
           echo successfully
