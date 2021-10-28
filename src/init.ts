@@ -2,9 +2,9 @@
 // 把NODE_ENV设置为production，所以 process.env.NODE_ENV就被设置为production了
 
 // for github pages
-var webpath:String = ""
-if (process.env.NODE_ENV === "production") {
-    webpath = "demo-blog"
+let webpath = ''
+if (process.env.NODE_ENV === 'production') {
+  webpath = 'demo-blog'
 }
 
 export { webpath }
