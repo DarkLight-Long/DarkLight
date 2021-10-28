@@ -4,7 +4,7 @@
 // for github pages
 let webpath = ''
 if (process.env.NODE_ENV === 'production') {
-  webpath = 'demo-blog'
+  webpath = '/demo-blog'
 }
 
 export { webpath }
