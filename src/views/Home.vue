@@ -14,5 +14,6 @@ import HelloWorld from '@/components/HelloWorld.vue' // @ is an alias to /src
     HelloWorld
   }
 })
+// 猜测:主要是调用外部方法来使用。本身只有一些装饰器
 export default class Home extends Vue {}
 </script>
