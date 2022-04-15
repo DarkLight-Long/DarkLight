@@ -1,0 +1,96 @@
+<html lang="en">
+<head>
+  <title>Cool</title>
+  <style>
+    :root {
+        --card-height: 200px;
+        --card-width: 120px;
+    }
+    body {
+        background-color: #212534;
+    }
+    .card {
+        position: relative;
+        background-color: #191c29;
+        height: var(--card-height);
+        width: var(--card-width);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-family: cursive;
+        color: black;
+    }
+    .card:hover {
+        color: wheat;
+        transition: color 1s;/*加了后由神奇的感觉*/
+    }
+    .card:hover:before, .card:hover:after {
+        animation: none;
+        opacity: 0;
+    }
+    .card::before {
+        position: absolute;
+        content: "";
+        width: 104%;
+        height: 102%;
+        border-radius: 8px;
+        /*background-image: linear-gradient(*/
+        /*    132deg, #5ddcff, #3c6fe3, #4e00c2*/
+        /*);*/
+        z-index: 1;
+        left: -1%;
+        top: -2%;
+        animation: spin 2.5s linear infinite;
+    }
+
+    /*.card::after {*/
+    /*    position: absolute;*/
+    /*    content: "";*/
+    /*    top: calc(var(--card-height) / 6);*/
+    /*    z-index: -1;*/
+    /*    height: 100%;*/
+    /*    width: 100%;*/
+    /*    margin: 0 auto;*/
+    /*    transform: scale(0.8);*/
+    /*    filter: blur(calc(var(--card-height) /6));*/
+    /*    background-image: linear-gradient(*/
+    /*            132deg, #5ddcff, #3c67e3, #4e00c2*/
+    /*    );*/
+    /*    opacity: 1;*/
+    /*    transition: opacity .5s;*/
+    /*    animation: spin 2,5s linear infinite;*/
+    /*}*/
+
+    /*@keyframes spin {*/
+    /*    0% {*/
+    /*        --rotate: 0deg;*/
+    /*    }*/
+    /*    100% {*/
+    /*        --rotate: 360deg;*/
+    /*    }*/
+    /*}*/
+
+    /*a {*/
+    /*    color: #212534;*/
+    /*    text-decoration: none;*/
+    /*    font-family: sans-serif;*/
+    /*    font-weight: bold;*/
+    /*    margin-top: 2rem;*/
+    /*}*/
+  </style>
+</head>
+<body>
+  <div class="card">
+    稀土掘金
+  </div>
+  <script type="text/javascript">
+      // css新特性中的Property
+    window.CSS.registerProperty({
+        name: '--rotate',
+        syntax: "<angle>",
+        initialValue: '132deg',
+        inherits: false,
+    })
+  </script>
+</body>
+</html>
