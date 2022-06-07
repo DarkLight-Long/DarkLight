@@ -22,6 +22,19 @@ const routes: Array<RouteConfig> = [
     path: '/test',
     name: 'Test',
     component: () => import(/* webpackChunkName: "test" */ '../views/test/Test.vue')
+  },
+  {
+    path: '/css',
+    // name: 'css',
+    component: () => import(/* webpackChunkName: "about" */ '../views/cssTest/CssComponent.vue'),
+    redirect: '/css/test',
+    children: [
+      {
+        path: '/css/test',
+        name: 'cssTest',
+        component: () => import(/* webpackChunkName: "about" */ '../views/cssTest/Test.vue')
+      }
+    ]
   }
 ]
 
