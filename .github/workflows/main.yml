@@ -35,12 +35,9 @@ jobs:
           node-version: '10.x'
       - name: CheckOut DarkLight
         env:
-          GITHUBTOKEN: ${{secrets.BLOG_DEMO_TOKEN}}
+          GITHUBTOKEN: ${{secrets.BLOG_SECRET}}
         run: |
           git clone https://github.com/DarkLight-Long/DarkLight.git
-          echo ${GITHUBTOKEN}
-          echo ${{ secrets.GITHUB_TOKEN }}
-          pwd
           ls
       - name: Checkout blog-demo
         uses: actions/checkout@v2.3.5
@@ -48,7 +45,7 @@ jobs:
           repository: DarkLight-Long/blog-demo
           ref: dev
           path: ./blog-demo
-          token: ${{ secrets.GITHUB_TOKEN }}
+          token: ${{ secrets.BLOG_SECRET }}
           persist-credentials: false
           fetch-depth: 0
       - name: Install Dependencies
@@ -82,7 +79,7 @@ jobs:
         uses: ad-m/github-push-action@master
         with:
           repository: DarkLight-Long/blog-demo
-          github_token: ${{secrets.BLOG_DEMO_TOKEN}}
+          github_token: ${{secrets.BLOG_SECRET}}
           directory: ./blog-demo
           branch: dev
           force: true
