@@ -40,7 +40,7 @@ const routes: Array<RouteConfig> = [
 
 const router = new VueRouter({
   mode: 'hash',
-  base: '/DarkLight-Long',
+  // base只有history模式才生效,
   routes
 })
 
